@@ -17,7 +17,7 @@ def giris():
         messagebox.showerror("Hata!", "TC Kimlik ve Sifre Bolumleri Bos Birakilamaz", parent=girisEkranı)
     else:
         try:
-            con = pymysql.connect(host="localhost", user="root",password="170420846Sa!", database="saglik")
+            con = pymysql.connect(host="localhost", user="root",password="", database="saglik")
             cur = con.cursor()
             cur.execute("select * from uyeler where tckimlik=%s and sifre = %s", (tc_.get(), sifre_.get()))
             row = cur.fetchone()
@@ -40,7 +40,7 @@ def giris():
 def kayit():
     def kayitOl():
         try:
-            con = pymysql.connect(host="localhost", user="root", password="170420846Sa!", database="saglik")
+            con = pymysql.connect(host="localhost", user="root", password="", database="saglik")
             cur = con.cursor()
             cur.execute("select * from uyeler where tckimlik=%s", tckimlik.get())
             row = cur.fetchone()

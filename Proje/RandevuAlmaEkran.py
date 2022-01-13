@@ -83,7 +83,7 @@ def RandevuPage():
 
 
         def polikinlikleriGetir(self):
-            con = pymysql.connect(host="localhost", user="root", password="170420846Sa!", database="saglik")
+            con = pymysql.connect(host="localhost", user="root", password="", database="saglik")
             cur = con.cursor()
             cur.execute("select * from poliklinik")
             rows = cur.fetchall()
@@ -103,7 +103,7 @@ def RandevuPage():
             self.hastaneadi.set(row[2])
 
         def randevuEkle(self):
-            con = pymysql.connect(host="localhost", user="root", password="170420846Sa!", database="saglik")
+            con = pymysql.connect(host="localhost", user="root", password="", database="saglik")
             cur = con.cursor()
             cur.execute("select * from uyeler where tckimlik=%s", self.tckimlik.get())
             row = cur.fetchone()

@@ -35,7 +35,7 @@ def tahminPage():
     teshis2 = StringVar()
 
     ##TAHMIN KISIM
-    dataset = pd.read_csv("C://Users//seyma//OneDrive//Masaüstü//hastalikTahmin//hastalikbuyuksett.csv")
+    dataset = pd.read_csv("hastalikbuyuksett.csv")
 
         ##Semptomlar eklendi.
     semptomlar = dataset.columns.drop('teshis')

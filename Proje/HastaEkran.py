@@ -115,7 +115,7 @@ def page():
             self.sifre2.delete('1.0', END)
 
         def hesapGuncelle(self):
-            con = pymysql.connect(host="localhost",user='root',password='170420846Sa!',db="saglik")
+            con = pymysql.connect(host="localhost",user='root',password='',db="saglik")
             cur = con.cursor()
             cur.execute("UPDATE uyeler SET ad=%s, soyad=%s,tckimlik = %s, cinsiyet=%s, dogumtarihi=%s, sifre=%s where iduyeler=%s",
                             (self.isim2.get('1.0', END), self.soyad2.get('1.0', END), self.tckimlik2.get('1.0', END), self.cinsiyet2.get(),
@@ -127,7 +127,7 @@ def page():
             messagebox.showinfo("Basarili", "Kayit Guncellendi")
 
         def hesapSil(self):
-            con = pymysql.connect(host="localhost",user='root',password='170420846Sa!',db="saglik")
+            con = pymysql.connect(host="localhost",user='root',password='',db="saglik")
             cur = con.cursor()
             cur.execute("DELETE FROM uyeler where iduyeler = '%s'" %(self.id2.get('1.0', END)))
             con.commit()
