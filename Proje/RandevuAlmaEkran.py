@@ -107,7 +107,7 @@ def RandevuPage():
             cur = con.cursor()
             cur.execute("select * from uyeler where tckimlik=%s", self.tckimlik.get())
             row = cur.fetchone()
-            cur.execute("INSERT INTO randevualma(polikinlikid,tckimlik) VALUES(%s,%s)",
+            cur.execute("INSERT INTO randevualma(polikinlikid, tckimlik) VALUES(%s,%s)",
                         (self.idpoliklinik.get(),self.tckimlik.get()))
             con.commit()
             con.close()
